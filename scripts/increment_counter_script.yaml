@@ -1,0 +1,17 @@
+config:
+  target: "http://127.0.0.1:8080"
+  phases:
+    - duration: 10
+      arrivalRate: 1000
+  variables:
+    countryCode:
+      - "us"
+      - "ru"
+      - "de"
+      - "it"
+      - "kz"
+      - "et"
+scenarios:
+  - flow:
+      - patch:
+          url: "/country/counter/{{countryCode}}/increment"

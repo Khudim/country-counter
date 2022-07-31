@@ -1,0 +1,12 @@
+networks:
+  default:
+    driver: bridge
+services:
+  redis:
+    build: ./redis
+    volumes:
+    - ./redis/data:/data
+  app:
+    build: .
+    ports:
+    - 8080:8080
